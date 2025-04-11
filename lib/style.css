@@ -1,0 +1,45 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 100vh;
+}
+    
+.header {
+    display: flex;
+    justify-content: center;
+    height: 70px;
+}
+
+.navigation {
+    height: 100vh;
+    grid-row: span 4 / span 4;
+    grid-row-start: 1;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: lightgray;
+    border: none;
+    cursor: pointer;
+    width: 250px;
+}
+
+.div3 {
+    grid-column: span 4 / span 4;
+    grid-row: span 4 / span 4;
+    grid-row-start: 1;
+    background-color: lightgreen;
+}
+        
