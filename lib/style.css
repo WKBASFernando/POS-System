@@ -2,44 +2,43 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: #b8e994;
 }
 
-.parent {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    height: 100vh;
+.main-content {
+    display: flex;
+    margin-top: 120px; 
+    padding: 0 20px;
 }
-    
-.header {
+
+.card-container {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    gap: 140px; /* Space between cards */
+}
+
+.card {
+    flex: 0 1 auto; /* don't grow, can shrink, base size auto */
+    margin-bottom: 20px; /* Space between cards when they wrap */
+    height: 30rem;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    height: 70px;
-}
-
-.navigation {
-    height: 100vh;
-    grid-row: span 4 / span 4;
-    grid-row-start: 1;
-    background-color: lightblue;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+image-container img {
+    width: 400px;
+    height: 400px;
 }
 
-button {
-    padding: 10px;
-    background-color: lightgray;
-    border: none;
-    cursor: pointer;
-    width: 250px;
-}
 
-.div3 {
-    grid-column: span 4 / span 4;
-    grid-row: span 4 / span 4;
-    grid-row-start: 1;
-    background-color: lightgreen;
-}
-        
+
