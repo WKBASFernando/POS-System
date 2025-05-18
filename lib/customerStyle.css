@@ -123,6 +123,29 @@ html, body {
     box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
 }
 
+.card-container .card:nth-child(2) {
+    max-height: 325px;
+    overflow-y: auto;
+}
+
+.card-container .card:nth-child(2)::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card-container .card:nth-child(2)::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+ 
+.card-container .card:nth-child(2)::-webkit-scrollbar-thumb {
+    background: #b2bec3;
+    border-radius: 10px;
+}
+
+.card-container .card:nth-child(2)::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6; 
+}
+
 .table {
     margin: 20px;
     width: calc(100% - 40px);
