@@ -6,6 +6,7 @@
     <title>AF POS | Items</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/items.css">
 
 </head>
 <body>
@@ -45,7 +46,104 @@
         </div>
     </div>
     
+    <div class="main-content">
+      <div class="card-container">
+        <div class="card" style="width: 100rem;">
+          <h2>Items</h2>
 
+          <div class="mb-3">
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Item ID" aria-label="Item ID">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Item Name" aria-label="Item Name">
+              </div>
+              
+            </div>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Item QTY" aria-label="Item QTY">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Unit Price" aria-label="Unit Price">
+              </div>
+              
+          </div>
+          <div class="d-flex p-2 justify-content-end hstack gap-3" style="margin: 15px;">
+            <button type="button" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-secondary">Clear All</button>
+
+          </div>
+          </div>
+          
+        </div>
+        <div class="card" style="width: 100rem;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Item ID</th>
+                <th scope="col">Item Name</th>
+                <th scope="col">Item QTY</th>
+                <th scope="col">Unit Price</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>John</td>
+                <td>Doe</td>
+                <td>@social</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Jane</td>
+                <td>Smith</td>
+                <td>@jsmith</td>  
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Emily</td>
+                <td>Jones</td>
+                <td>@ejones</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Michael</td>
+                <td>Brown</td>
+                <td>@mbrown</td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>Sarah</td>
+                <td>Johnson</td>
+                <td>@sjohnson</td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>David</td>
+                <td>Williams</td>
+                <td>@dwilliams</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
