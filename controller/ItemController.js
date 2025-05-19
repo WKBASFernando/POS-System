@@ -12,6 +12,7 @@ function generateItemID() {
     if (item_db.length === 0) {
         return "I001";
     }
+    
     // Get the last Item ID (assuming last added is at the end)
     let lastId = item_db[item_db.length - 1].itemId;
     let numberPart = parseInt(lastId.substring(1));
@@ -121,6 +122,7 @@ $('#item-body').on('click','tr',function () {
     $('#itemQuantity').val(qty);
     $('#itemPrice').val(price);
 
+
 })
 
 /*---------------Update Item Details-------------------------------*/
@@ -162,4 +164,48 @@ $('#item_update').on('click', function () {
             text: "Item with ID " + id + " does not exist.",
         });
     }
+});
+
+/*--------------------------Delete Item--------------------------*/
+$('#item_delete').on('click', function () {
+    let id = $('#itemCode').val();
+
+    if (id === '') {
+        Swal.fire({
+            icon: "warning",
+            title: "No ID",
+            text: "Please select a item to delete.",
+        });
+        return;
+    }
+
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const index = item_db.findIndex(c => c.itemId === id);
+            if (index !== -1) {
+                item_db.splice(index, 1); // Remove from array
+                loadItem();
+                clearForm();
+                Swal.fire(
+                    "Deleted!",
+                    "Item has been deleted.",
+                    "success"
+                );
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Not Found",
+                    text: "Item with ID " + id + " does not exist.",
+                });
+            }
+        }
+    });
 });
