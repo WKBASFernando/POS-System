@@ -47,6 +47,26 @@ function generateCustomerID() {
     return "C" + newId.toString().padStart(3, '0');
 }
 
+/*-----------------------Load Table Data--------------------------------------------*/
+function loadCustomers() {
+    $('#customer-tbody').empty();
+    customer_db.map((customer,index)=>{
+        let id = customer.customerID;
+        let name = customer.customerName;
+        let address = customer.address;
+        let phone = customer.customerPhone;
+
+        let  data = `<tr>
+                            <td>${id}</td>
+                            <td>${name}</td>
+                            <td>${address}</td>
+                            <td>${phone}</td>
+                        </tr>`
+        $('#customer-tbody').append(data);
+
+    })
+}
+
 /*--------------------------Save Customer----------------------------*/
 $('#customer_save').on('click', function () {
     let id = generateCustomerID();
