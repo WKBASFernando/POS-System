@@ -67,3 +67,30 @@ export function loadItem() {
 
     })
 }
+
+/*---------------------------Save Item----------------------------------------*/
+$('#item_save').on('click',function () {
+    let id = generateItemID();
+    $('#itemCode').val(id);
+    let name = $('#itemName').val();
+    let qty = $('#itemQuantity').val();
+    let price = $('#itemPrice').val();
+
+    if (!namePattern.test(name) || !qtyPattern.test(qty) || !pricePattern.test(price)){
+        Swal.fire({
+            icon: "error",
+            title: "Invalid Input...",
+            text: "Something went wrong!",
+        });
+    }else {
+        let item_data = new ItemModel(id,name,qty,price);
+        item_db.push(item_data);
+        loadItem();
+        clearForm();
+        Swal.fire({
+            title: "Data Saved Successfully!",
+            icon: "success",
+            draggable: true
+        });
+    }
+});
