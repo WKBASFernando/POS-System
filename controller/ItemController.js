@@ -94,3 +94,14 @@ $('#item_save').on('click',function () {
         });
     }
 });
+
+/*---------------------------Clear data in the form--------------------------------------------*/
+function clearForm() {
+    $('#itemCode').val(generateItemID());
+    $('#itemName').val('').removeClass('is-valid is-invalid');
+    $('#itemQuantity').val('').removeClass('is-valid is-invalid');
+    $('#itemPrice').val('').removeClass('is-valid is-invalid');
+}
+$('#item_reset').on('click',function () {
+    clearForm();
+})
