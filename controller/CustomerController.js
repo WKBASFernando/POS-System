@@ -104,3 +104,16 @@ function clearForm() {
 $('#customer_reset').on('click',function () {
     clearForm();
 })
+
+/*---------------------------Table on Click Action--------------------------------------------*/
+$('#customer-tbody').on('click', 'tr', function () {
+    let customerId = $(this).find('td').eq(0).text();
+    let customerName = $(this).find('td').eq(1).text();
+    let customerAddress = $(this).find('td').eq(2).text();
+    let customerPhone = $(this).find('td').eq(3).text();
+
+    $('#customerId').val(customerId);
+    $('#customerName').val(customerName);
+    $('#customerAddress').val(customerAddress);
+    $('#customerPhone').val(customerPhone);
+});
