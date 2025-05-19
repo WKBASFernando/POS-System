@@ -93,3 +93,14 @@ $('#customer_save').on('click', function () {
         });
     }
 });
+
+/*---------------------------Clear data in the form--------------------------------------------*/
+function clearForm() {
+    $('#customerId').val(generateCustomerID());
+    $('#customerName').val('').removeClass('is-valid is-invalid');
+    $('#customerAddress').val('').removeClass('is-valid is-invalid');
+    $('#customerPhone').val('').removeClass('is-valid is-invalid');
+}
+$('#customer_reset').on('click',function () {
+    clearForm();
+})
