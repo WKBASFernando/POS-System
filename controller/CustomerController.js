@@ -34,3 +34,15 @@ $('#customerPhone').on('input', function () {
         $(this).addClass('is-valid').removeClass('is-invalid');
     }
 });
+
+/*--------------------------Generate next Customer Id----------------------------*/
+function generateCustomerID() {
+    if (customer_db.length === 0) {
+        return "C001";
+    }
+    // Get the last customer ID (assuming last added is at the end)
+    let lastId = customer_db[customer_db.length - 1].customerID;
+    let numberPart = parseInt(lastId.substring(1));
+    let newId = numberPart + 1;
+    return "C" + newId.toString().padStart(3, '0');
+}
