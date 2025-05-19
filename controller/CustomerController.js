@@ -68,8 +68,9 @@ function loadCustomers() {
 }
 
 /*--------------------------Save Customer----------------------------*/
-$('#customer_save').on('click', function () {
-    let id = generateCustomerID();
+$('#customer_save').on('click',function () {
+    let id = generateCustomerID()
+    $('#customerId').val(id);
     let name = $('#customerName').val();
     let address = $('#customerAddress').val();
     let phone = $('#customerPhone').val();
@@ -85,7 +86,7 @@ $('#customer_save').on('click', function () {
         customer_db.push(customer_data);
         loadCustomers();
         clearForm();
-        setCount();
+        // setCount();
         Swal.fire({
             title: "Data Saved Successfully!",
             icon: "success",
@@ -116,4 +117,45 @@ $('#customer-tbody').on('click', 'tr', function () {
     $('#customerName').val(customerName);
     $('#customerAddress').val(customerAddress);
     $('#customerPhone').val(customerPhone);
+});
+
+/*---------------------------Update Customer--------------------------------------------*/
+$('#customer_update').on('click', function () {
+    let id = $('#customerId').val();
+    let name = $('#customerName').val();
+    let address = $('#customerAddress').val();
+    let phone = $('#customerPhone').val();
+
+    if (!namePattern.test(name) || !addressPattern.test(address) || !phonePattern.test(phone)) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Select data to update!",
+        });
+        return;
+    }
+
+    /*Find index of customer by ID*/
+    const index = customer_db.findIndex(c => c.customerID === id);
+
+    if (index !== -1) {
+        customer_db[index].customerName = name;
+        customer_db[index].address = address;
+        customer_db[index].customerPhone = phone;
+
+        loadCustomers();
+        clearForm();
+
+        Swal.fire({
+            title: "Updated Successfully!",
+            icon: "success",
+            draggable: true
+        });
+    } else {
+        Swal.fire({
+            icon: "error",
+            title: "Not Found",
+            text: "Customer with ID " + id + " does not exist.",
+        });
+    }
 });
