@@ -47,3 +47,23 @@ $('#itemPrice').on('input',function () {
         $(this).addClass('is-valid').removeClass('is-invalid');
     }
 });
+
+/*-----------------------Load Table Data--------------------------------------------*/
+export function loadItem() {
+    $('#item-body').empty();
+    item_db.map((item)=>{
+        let id = item.itemId;
+        let name = item.itemName;
+        let quantity = item.itemQty;
+        let price = item.itemPrice;
+
+        let  data = `<tr>
+                            <td>${id}</td>
+                            <td>${name}</td>
+                            <td>${quantity}</td>
+                            <td>${price}</td>
+                        </tr>`
+        $('#item-body').append(data);
+
+    })
+}
