@@ -46,3 +46,30 @@ function generateCustomerID() {
     let newId = numberPart + 1;
     return "C" + newId.toString().padStart(3, '0');
 }
+
+/*--------------------------Save Customer----------------------------*/
+$('#customer_save').on('click', function () {
+    let id = generateCustomerID();
+    let name = $('#customerName').val();
+    let address = $('#customerAddress').val();
+    let phone = $('#customerPhone').val();
+
+    if (!namePattern.test(name) || !addressPattern.test(address) || !phonePattern.test(phone)) {
+        Swal.fire({
+            icon: "error",
+            title: "Invalid Input",
+            text: "Please enter valid customer details.",
+        });
+    }else {
+        let customer_data = new CustomerModel(id,name,address,phone);
+        customer_db.push(customer_data);
+        loadCustomers();
+        clearForm();
+        setCount();
+        Swal.fire({
+            title: "Data Saved Successfully!",
+            icon: "success",
+            draggable: true
+        });
+    }
+});
