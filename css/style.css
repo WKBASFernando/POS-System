@@ -56,3 +56,156 @@ html, body {
 .card:hover {
     transform: translateY(-5px);
 }
+
+
+
+.main-content {
+    display: flex;
+    margin-top: 100px;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+.card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    text-align: center;
+    margin: 25px 0;
+    color: #2d3436;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.col {
+    margin: 10px;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+    border-color: #3498db;
+}
+
+.form-control::placeholder {
+    color: #b2bec3;
+}
+
+.btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-success {
+    background-color: #00b894;
+}
+
+.btn-success:hover {
+    background-color: #00a884;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 184, 148, 0.3);
+}
+
+.btn-primary {
+    background-color: #3498db;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+.btn-secondary {
+    background-color: #636e72;
+}
+
+.btn-secondary:hover {
+    background-color: #2d3436;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(99, 110, 114, 0.3);
+}
+
+.card-container .card:nth-child(2) {
+    max-height: 325px;
+    overflow-y: auto;
+}
+
+.card-container .card:nth-child(2)::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card-container .card:nth-child(2)::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+ 
+.card-container .card:nth-child(2)::-webkit-scrollbar-thumb {
+    background: #b2bec3;
+    border-radius: 10px;
+}
+
+.card-container .card:nth-child(2)::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6; 
+}
+
+.table {
+    margin: 20px;
+    width: calc(100% - 40px);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    color: #2d3436;
+    font-weight: 600;
+    padding: 15px;
+    border-top: none;
+}
+
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f9ff;
+}
+
+.table-group-divider {
+    border-top: 2px solid #e0e0e0;
+}

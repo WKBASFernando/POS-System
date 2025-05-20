@@ -7,12 +7,12 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/customerStyle.css">
-    <link rel="stylesheet" href="css/items.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 
 </head>
 <body>
-    <div class="d-flex justify-content-end">
+    <section id="header-section" class="d-flex justify-content-end">
         <div class="fixed-top">
         
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -46,8 +46,141 @@
                 </div>              
             </nav>     
         </div>
-    </div>
+    </section>
     <div class="main-content p-4">
+
+      <section id="customer-section">
+        <div class="card-container">
+          <div class="card" style="width: 100rem;">
+            <h2>Customers</h2>
+  
+            <div class="mb-3">
+              <div class="row g-3 mb-4">
+                <div class="col-md-4">  
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+                    <input type="text" class="form-control" id="customerId" readonly placeholder="Customer ID" aria-label="Customer ID">
+                </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="customerName" required placeholder="Customer Name" aria-label="Customer Name">
+                    <div class="invalid-feedback">Enter a valid name (at least 3 letters).</div>
+                    <div class="valid-feedback"></div>
+                </div>
+                </div>
+                
+              </div>
+              <div class="row g-3 mb-4">
+                <div class="col-md-8">
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="customerAddress" required placeholder="Customer Address" aria-label="Customer Address">
+                    <div class="invalid-feedback">Enter a valid Address (at least 3 letters).</div>
+                    <div class="valid-feedback"></div>
+                </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <input type="tel" step="0.01" class="form-control" id="customerPhone" required placeholder="Phone Number" aria-label="Phone Number">
+                    <div class="invalid-feedback">Enter valid phone number (+94#########).</div>
+                    <div class="valid-feedback"></div>
+                </div>
+                </div>
+                
+            </div>
+            <div class="d-flex p-2 justify-content-end hstack gap-3" style="margin: 15px;">
+              <button id="customer_save" type="button" class="btn btn-success">Save</button>
+              <button id="customer_update" type="button" class="btn btn-primary">Update</button>
+              <button id="customer_delete" type="button" class="btn btn-danger">Delete</button>
+              <button id="customer_reset" type="button" class="btn btn-secondary">Clear All</button>
+            </div>
+            </div>
+            
+          </div>
+          <div class="card" style="width: 100rem;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Customer ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Salary</th>
+                </tr>
+              </thead>
+              <tbody id="customer-tbody" class="table-group-divider">
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="item-section">
+        <div class="card-container">
+          <div class="card" style="width: 100rem;">
+            <h2>Items</h2>
+  
+            <div class="mb-3">
+              <div class="row">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-upc-scan"></i></span>
+                    <input type="text" class="form-control" id="itemCode" placeholder="Auto-generated" readonly>
+                </div>            </div>
+                <div class="col">
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="itemName" required placeholder="Item Name" aria-label="Item Name">
+                    <div class="invalid-feedback">Enter a valid name (at least 3 letters).</div>
+                    <div class="valid-feedback"></div>
+                </div>              
+              </div>
+                
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="input-group">
+                    <input type="number" min="0" class="form-control" id="itemQuantity" required placeholder="Item QTY" aria-label="Item QTY">
+                    <div class="invalid-feedback">Invalid Qty</div>
+                    <div class="valid-feedback"></div>
+                </div>              
+              </div>
+                <div class="col">
+                  <div class="input-group">
+                    <input type="number" step="0.01" min="0" class="form-control" id="itemPrice" required placeholder="Unit Price" aria-label="Unit Price">
+                    <div class="invalid-feedback">Invalid Price.</div>
+                    <div class="valid-feedback"></div>
+                </div>              
+              </div>  
+            </div>
+  
+            <div class="d-flex p-2 justify-content-end hstack gap-3" style="margin: 15px;">
+              <button id="item_save" type="button" class="btn btn-success">Save</button>
+              <button id="item_updte" type="button" class="btn btn-primary">Update</button>
+              <button id="item_delete" type="button" class="btn btn-danger">Delete</button>
+              <button id="item_reset" type="button" class="btn btn-secondary">Clear All</button>
+  
+            </div>
+            </div>
+            
+          </div>
+          <div class="card" style="width: 100rem;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Item ID</th>
+                  <th scope="col">Item Name</th>
+                  <th scope="col">Item QTY</th>
+                  <th scope="col">Unit Price</th>
+                </tr>
+              </thead>
+              <tbody id="item-body" class="table-group-divider">
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       <section id="order-section" class="container">
         <div class="d-flex align-items-center mb-4">
           <h1 class="mb-0 fw-bold text-primary">Order Management</h1>
@@ -337,152 +470,24 @@
                   <button id="placeOrder" type="button" class="btn btn-primary btn-lg">
                     <i class="bi bi-check-circle me-2"></i> Place Order
                   </button>
+                  <button id="viewOrdersBtn" class="btn btn-info btn-lg">
+                    <i class="bi bi-list-ul me-2"></i> View All Orders
+                  </button>
                 </div>
               </div>
             </form>
           </div>
         </div>
       </section>
-
-      <section id="customer-section">
-        <div class="card-container">
-          <div class="card" style="width: 100rem;">
-            <h2>Customers</h2>
-  
-            <div class="mb-3">
-              <div class="row g-3 mb-4">
-                <div class="col-md-4">  
-                  <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
-                    <input type="text" class="form-control" id="customerId" readonly placeholder="Customer ID" aria-label="Customer ID">
-                </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="input-group">
-                    <input type="text" class="form-control" id="customerName" required placeholder="Customer Name" aria-label="Customer Name">
-                    <div class="invalid-feedback">Enter a valid name (at least 3 letters).</div>
-                    <div class="valid-feedback"></div>
-                </div>
-                </div>
-                
-              </div>
-              <div class="row g-3 mb-4">
-                <div class="col-md-8">
-                  <div class="input-group">
-                    <input type="text" class="form-control" id="customerAddress" required placeholder="Customer Address" aria-label="Customer Address">
-                    <div class="invalid-feedback">Enter a valid Address (at least 3 letters).</div>
-                    <div class="valid-feedback"></div>
-                </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="input-group">
-                    <input type="tel" step="0.01" class="form-control" id="customerPhone" required placeholder="Phone Number" aria-label="Phone Number">
-                    <div class="invalid-feedback">Enter valid phone number (+94#########).</div>
-                    <div class="valid-feedback"></div>
-                </div>
-                </div>
-                
-            </div>
-            <div class="d-flex p-2 justify-content-end hstack gap-3" style="margin: 15px;">
-              <button id="customer_save" type="button" class="btn btn-success">Save</button>
-              <button id="customer_update" type="button" class="btn btn-primary">Update</button>
-              <button id="customer_delete" type="button" class="btn btn-danger">Delete</button>
-              <button id="customer_reset" type="button" class="btn btn-secondary">Clear All</button>
-            </div>
-            </div>
-            
-          </div>
-          <div class="card" style="width: 100rem;">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Customer ID</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">Salary</th>
-                </tr>
-              </thead>
-              <tbody id="customer-tbody" class="table-group-divider">
-                
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section id="item-section">
-        <div class="card-container">
-          <div class="card" style="width: 100rem;">
-            <h2>Items</h2>
-  
-            <div class="mb-3">
-              <div class="row">
-                <div class="col">
-                  <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-upc-scan"></i></span>
-                    <input type="text" class="form-control" id="itemCode" placeholder="Auto-generated" readonly>
-                </div>            </div>
-                <div class="col">
-                  <div class="input-group">
-                    <input type="text" class="form-control" id="itemName" required placeholder="Item Name" aria-label="Item Name">
-                    <div class="invalid-feedback">Enter a valid name (at least 3 letters).</div>
-                    <div class="valid-feedback"></div>
-                </div>              
-              </div>
-                
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="input-group">
-                    <input type="number" min="0" class="form-control" id="itemQuantity" required placeholder="Item QTY" aria-label="Item QTY">
-                    <div class="invalid-feedback">Invalid Qty</div>
-                    <div class="valid-feedback"></div>
-                </div>              
-              </div>
-                <div class="col">
-                  <div class="input-group">
-                    <input type="number" step="0.01" min="0" class="form-control" id="itemPrice" required placeholder="Unit Price" aria-label="Unit Price">
-                    <div class="invalid-feedback">Invalid Price.</div>
-                    <div class="valid-feedback"></div>
-                </div>              
-              </div>  
-            </div>
-  
-            <div class="d-flex p-2 justify-content-end hstack gap-3" style="margin: 15px;">
-              <button id="item_save" type="button" class="btn btn-success">Save</button>
-              <button id="item_updte" type="button" class="btn btn-primary">Update</button>
-              <button id="item_delete" type="button" class="btn btn-danger">Delete</button>
-              <button id="item_reset" type="button" class="btn btn-secondary">Clear All</button>
-  
-            </div>
-            </div>
-            
-          </div>
-          <div class="card" style="width: 100rem;">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Item ID</th>
-                  <th scope="col">Item Name</th>
-                  <th scope="col">Item QTY</th>
-                  <th scope="col">Unit Price</th>
-                </tr>
-              </thead>
-              <tbody id="item-body" class="table-group-divider">
-                
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+    
     </div>
 
     <script src="lib/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="controller/MainController.js"></script>
     <script type="module" src="controller/CustomerController.js"></script>
-    <script type="module" src="controller/OrderController.js"></script>
     <script type="module" src="controller/ItemController.js"></script>
+    <script type="module" src="controller/OrderController.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
