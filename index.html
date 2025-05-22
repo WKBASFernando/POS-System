@@ -24,6 +24,9 @@
                   <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                       <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home-section">Home</a>
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#order-section">Orders</a>
                       </li>
                       <li class="nav-item">
@@ -115,7 +118,201 @@
         </div>
       </section>
 
-      <section id="item-section">
+      <!-- Home Section -->
+      <section id="home-section">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="floating-elements"></div>
+            <div class="container position-relative">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="animate__animated animate__fadeInLeft">
+                            <h1 class="display-4 fw-bold mb-4">
+                                Welcome to <span class="text-warning">AF POS System</span>
+                            </h1>
+                            <p class="lead mb-4">
+                                Streamline your business operations with our comprehensive Point of Sale system. 
+                                Manage orders, customers, and inventory all in one place.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button class="btn btn-warning btn-lg quick-action-btn" onclick="scrollToSection('order-section')">
+                                    <i class="bi bi-cart-plus me-2"></i>Create Order
+                                </button>
+                                <button class="btn btn-outline-light btn-lg quick-action-btn" onclick="scrollToSection('customer-section')">
+                                    <i class="bi bi-people me-2"></i>Manage Customers
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="animate__animated animate__fadeInRight">
+                            <div class="text-center">
+                                <i class="bi bi-shop display-1 text-warning opacity-75"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="container my-5">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stats-card animate__animated animate__fadeInUp">
+                        <div class="stats-icon bg-primary bg-gradient text-white">
+                            <i class="bi bi-cart-check"></i>
+                        </div>
+                        <h3 class="h4 fw-bold text-primary mb-1" id="totalOrders">0</h3>
+                        <p class="text-muted mb-0">Total Orders</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                        <div class="stats-icon bg-success bg-gradient text-white">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3 class="h4 fw-bold text-success mb-1" id="totalCustomers">0</h3>
+                        <p class="text-muted mb-0">Customers</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                        <div class="stats-icon bg-warning bg-gradient text-white">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+                        <h3 class="h4 fw-bold text-warning mb-1" id="totalItems">0</h3>
+                        <p class="text-muted mb-0">Items</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                        <div class="stats-icon bg-info bg-gradient text-white">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <h3 class="h4 fw-bold text-info mb-1" id="totalRevenue">$0.00</h3>
+                        <p class="text-muted mb-0">Total Revenue</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="container my-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title h1 fw-bold text-dark">System Features</h2>
+                <p class="lead text-muted">Everything you need to manage your business efficiently</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card animate__animated animate__fadeInUp">
+                        <div class="feature-icon bg-primary bg-gradient">
+                            <i class="bi bi-cart-plus"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Order Management</h4>
+                        <p class="text-muted">
+                            Create, process, and track orders seamlessly. Generate invoices and manage payments with ease.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                        <div class="feature-icon bg-success bg-gradient">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Customer Database</h4>
+                        <p class="text-muted">
+                            Maintain detailed customer records, track purchase history, and build lasting relationships.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-cart animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                        <div class="feature-icon bg-warning bg-gradient">
+                            <i class="bi bi-box-seam-fill"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Inventory Control</h4>
+                        <p class="text-muted">
+                            Monitor stock levels, update prices, and manage your product catalog efficiently.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                        <div class="feature-icon bg-info bg-gradient">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Sales Analytics</h4>
+                        <p class="text-muted">
+                            Track sales performance, analyze trends, and make data-driven business decisions.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                        <div class="feature-icon bg-danger bg-gradient">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Secure Transactions</h4>
+                        <p class="text-muted">
+                            Process payments securely with multiple payment methods and encrypted data protection.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                        <div class="feature-icon bg-secondary bg-gradient">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Mobile Responsive</h4>
+                        <p class="text-muted">
+                            Access your POS system from any device, anywhere, with full mobile compatibility.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions Section -->
+        <div class="bg-light py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title h1 fw-bold text-dark">Quick Actions</h2>
+                    <p class="lead text-muted">Jump to the most commonly used features</p>
+                </div>
+                
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-3 col-md-6">
+                        <button class="btn btn-primary btn-lg w-100 quick-action-btn py-4" onclick="scrollToSection('order-section')">
+                            <i class="bi bi-plus-circle d-block mb-2" style="font-size: 2rem;"></i>
+                            <span class="fw-bold">New Order</span>
+                        </button>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <button class="btn btn-success btn-lg w-100 quick-action-btn py-4" onclick="scrollToSection('customer-section')">
+                            <i class="bi bi-person-plus d-block mb-2" style="font-size: 2rem;"></i>
+                            <span class="fw-bold">Add Customer</span>
+                        </button>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <button class="btn btn-warning btn-lg w-100 quick-action-btn py-4" onclick="scrollToSection('item-section')">
+                            <i class="bi bi-box d-block mb-2" style="font-size: 2rem;"></i>
+                            <span class="fw-bold">Manage Items</span>
+                        </button>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <button class="btn btn-info btn-lg w-100 quick-action-btn py-4" id="viewOrdersFromHome">
+                            <i class="bi bi-list-ul d-block mb-2" style="font-size: 2rem;"></i>
+                            <span class="fw-bold">View Orders</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <section id="item-section" >
         <div class="card-container">
           <div class="card" style="width: 100rem;">
             <h2>Items</h2>
@@ -181,7 +378,7 @@
         </div>
       </section>
 
-      <section id="order-section" class="container">
+      <section id="order-section">
         <div class="d-flex align-items-center mb-4">
           <h1 class="mb-0 fw-bold text-primary">Order Management</h1>
         </div>
@@ -469,9 +666,6 @@
                   </button>
                   <button id="placeOrder" type="button" class="btn btn-primary btn-lg">
                     <i class="bi bi-check-circle me-2"></i> Place Order
-                  </button>
-                  <button id="viewOrdersBtn" class="btn btn-info btn-lg">
-                    <i class="bi bi-list-ul me-2"></i> View All Orders
                   </button>
                 </div>
               </div>

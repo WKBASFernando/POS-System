@@ -1,7 +1,7 @@
 import {customer_db,orders_db,item_db} from "../db/db.js";
 
 $(document).ready(function () {
-    $("section").not("#header-section, #order-section").hide();
+    $("section").not("#header-section, #home-section").hide();
     // Handle navigation clicks
     $("a.nav-link, .dropdown-item").click(function (e) {
         e.preventDefault(); // Prevent the default jump behavior
